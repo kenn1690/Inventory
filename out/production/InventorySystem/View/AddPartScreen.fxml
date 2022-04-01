@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="375.0" prefWidth="364.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddPartController">
+    <children>
+        <VBox layoutX="9.0" layoutY="63.0" prefHeight="291.0" prefWidth="365.0">
+            <children>
+                <GridPane prefHeight="181.0" prefWidth="332.0" vgap="25.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="174.0" minWidth="10.0" prefWidth="103.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="281.99999237060547" minWidth="10.0" prefWidth="222.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label fx:id="priceLbl" text="Price" GridPane.rowIndex="2" />
+                        <Label fx:id="minLbl" layoutX="10.0" layoutY="47.0" text="Min" GridPane.rowIndex="4" />
+                        <Label fx:id="stockLbl" layoutX="10.0" layoutY="47.0" text="Stock" GridPane.rowIndex="3" />
+                        <Label fx:id="maxLbl" layoutX="10.0" layoutY="108.0" text="Max" GridPane.rowIndex="5" />
+                        <Label fx:id="partTypeLbl" layoutX="10.0" layoutY="47.0" text="Machine iD " GridPane.rowIndex="6" />
+                        <Label fx:id="nameLbl" layoutX="10.0" layoutY="47.0" text="Name" GridPane.rowIndex="1" />
+                        <Label fx:id="partIDLbl" text="ID" />
+                        <TextField fx:id="partIDTxt" disable="true" editable="false" text="Auto Generated" GridPane.columnIndex="1" />
+                        <TextField fx:id="nameTxt" layoutX="73.0" layoutY="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="priceDbl" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="stockTxt" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="minInt" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="maxInt" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="partTypeTxt" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                    </children>
+                </GridPane>
+                <HBox alignment="BOTTOM_RIGHT" prefHeight="94.0" prefWidth="326.0" spacing="25.0">
+                    <children>
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onActionSavePart" text="Save Part" />
+                        <Button mnemonicParsing="false" onAction="#toFirst" text="Back" />
+                    </children>
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding></HBox>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+        </VBox>
+        <HBox prefHeight="67.0" prefWidth="356.0" spacing="40.0">
+            <children>
+                <Label text="Part Type:" />
+                <RadioButton fx:id="inHouseRbtn" mnemonicParsing="false" onAction="#onActionChangeToInHouse" selected="true" text="InHouse">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="partTG" />
+                    </toggleGroup></RadioButton>
+                <RadioButton fx:id="outSourcedRbtn" mnemonicParsing="false" onAction="#onActionChangeToOutSourced" text="OutSourced" toggleGroup="$partTG" />
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+        </HBox>
+    </children>
+</AnchorPane>
